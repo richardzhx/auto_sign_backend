@@ -1,0 +1,47 @@
+2025-11-27 10:32:48,467 [ERROR] 登录失败: 登录失败: {'STATUS': '1', 'ERRCODE': '100', 'ERRMSG': '参数错误!'}
+Traceback (most recent call last):
+  File "C:\Users\29288\PyCharmMiscProject\auto_sign_backend\run.py", line 63, in run_auto_sign
+    client.login(cfg["phone"], cfg.get("password"))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\29288\PyCharmMiscProject\auto_sign_backend\client\iclass_client.py", line 42, in login
+    raise RuntimeError("登录失败: " + str(js))
+RuntimeError: 登录失败: {'STATUS': '1', 'ERRCODE': '100', 'ERRMSG': '参数错误!'}
+2025-11-27 10:32:48,468 [INFO] dry_run 模式继续（未登录）
+2025-11-27 10:32:48,493 [ERROR] 获取课程失败: Expecting value: line 2 column 1 (char 2)
+Traceback (most recent call last):
+  File "C:\Users\29288\PyCharmMiscProject\.venv\Lib\site-packages\requests\models.py", line 976, in json
+    return complexjson.loads(self.text, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\29288\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\29288\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\29288\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 2)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\29288\PyCharmMiscProject\auto_sign_backend\run.py", line 76, in run_auto_sign
+    sched = client.get_course_sched(today)
+  File "C:\Users\29288\PyCharmMiscProject\auto_sign_backend\client\iclass_client.py", line 57, in get_course_sched
+    return resp.json()
+           ~~~~~~~~~^^
+  File "C:\Users\29288\PyCharmMiscProject\.venv\Lib\site-packages\requests\models.py", line 980, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 2 column 1 (char 2)
+2025-11-27 10:37:46,139 [INFO] 自动选择全部课程，共 1 门。
+2025-11-27 10:37:46,140 [INFO] 进入自动签到检测循环（每分钟检测一次，直到所有课程签到完成）
+2025-11-27 10:37:46,140 [INFO] 检测到课程 [工科数学分析（1）] 进入签到窗口，准备签到...
+2025-11-27 10:37:46,166 [INFO] 提交签到数据: {"id": "211565", "courseSchedId": "2305891", "routerInfo": "A0:EE:1A:E0:A2:0E", "longitude": 116.397451, "latitude": 39.909187, "machineInfo": "Android", "signTime": "2025-11-27 10:37:46"}
+2025-11-27 10:37:46,166 [INFO] dry_run 模式或未配置 sign_url，不执行签到请求。
+2025-11-27 10:37:46,166 [INFO] 课程 [工科数学分析（1）] 签到完成。
+2025-11-27 10:38:24,722 [INFO] 自动选择全部课程，共 1 门。
+2025-11-27 10:38:24,722 [INFO] 进入自动签到检测循环（每分钟检测一次，直到所有课程签到完成）
+2025-11-27 10:38:24,722 [INFO] 检测到课程 [工科数学分析（1）] 进入签到窗口，准备签到...
+2025-11-27 10:38:24,795 [INFO] 提交签到数据: {"id": "211565", "courseSchedId": "2305891", "routerInfo": "A0:EE:1A:E0:A2:0E", "longitude": 116.397451, "latitude": 39.909187, "machineInfo": "Android", "signTime": "2025-11-27 10:38:24"}
+2025-11-27 10:38:24,892 [INFO] 签到返回: {'STATUS': '0', 'result': {'stuSignId': '4621490', 'stuSignStatus': '1'}}
+2025-11-27 10:38:24,892 [INFO] 课程 [工科数学分析（1）] 签到完成。
